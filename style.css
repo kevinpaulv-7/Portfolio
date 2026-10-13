@@ -10,6 +10,20 @@ body {
   color: white;
   line-height: 1.6;
 }
+
+.light-theme{
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+  color: #0f0c29;
+  line-height: 1.6;
+}
+form {
+  display: flex;
+  flex-direction:column;
+  gap: 3rem;
+  padding: 2rem;
+
+}
 a {
   color: #00ffff;
   text-decoration: none;
@@ -44,26 +58,6 @@ nav ul li a {
 nav ul li a.active {
   border-bottom: 2px solid #00ffff;
 }
-#menu-toggle{
-  display: none;
-  font-size: 2rem;
-  color: #00ffff;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 1001;
-}
-#close-btn  {
-  display: none;
-  font-size: 2rem;
-  color: #00ffff;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 1001;
-}
 
 
 .hero {
@@ -93,7 +87,6 @@ nav ul li a.active {
   margin-bottom: 2rem;
 }
 
-/* Floating Hero Photo */
 .hero-photo {
   position: relative;
   width: 250px;
@@ -239,4 +232,5 @@ section h2 {
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 

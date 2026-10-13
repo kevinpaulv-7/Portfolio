@@ -7,12 +7,11 @@
 
 <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="body">
 
 <nav>
   <div class="logo">Kevin Paul</div>
-  <div id="menu-toggle">☰</div>
-  <div id="close-btn">✖</div>
+  
   <ul id="nav-links"> 
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -21,16 +20,18 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#interests">Interests</a></li>
     <li><a href="#achievements">Achievements</a></li>
-    <button class="theme" id="theme" onclick="toggleTheme()">change theme</button>
+    <button class="theme" id="theme">change theme</button>
   </ul>
 </nav>
 
 <section id="hero" class="hero">
 <h1>Hi, I'm Kevin Paul</h1>
 <p>Web Developer & UI Designer</p>
-<div class="hero-photo" id="heroCanvas">
-  <img src="./Kevin Paul V - CSE IV-B - 2023-27.jpeg" alt="Kevin Paul">
-</div>
+<div class="hero-photo" id="hero">
+  <img src="./Kevin Paul V - CSE IV-B - 2023-27.jpeg" alt="Kevin Paul"><br>
+</div><br>
+<button id="hide">Hide</button>
+<label id="hidelabel"></label></div>
 </section>
 
 
@@ -172,7 +173,8 @@
     </div>
   </div>
 </section>
-
+<button id="download">Download Resume</button>
+<label id="down">counter:0</label>
 
 <section id="contact-buttons" class="contact-buttons">
   <h2>Let's Connect</h2>
@@ -182,6 +184,33 @@
   </div>
 </section>
 
+<script>
+      const button1=document.getElementById("hide");
+      let boolean=true;
+      const photo=document.getElementById("hero");
+      button1.addEventListener('click',function(){
+        boolean=!boolean;
+        photo.style.display=`${boolean?"block":"none"}`;
+        button1.textContent=`${boolean?"Hide":"Show"} `;
+      })
 
+      let isdark=true;
+      const button2=document.getElementById("theme");
+      const body=document.getElementById("body");
+      button2.addEventListener('click',function(){
+        body.className=`${isdaek?"dark-theme":"light-theme"}`;
+      })
+
+
+
+
+      var count=0;
+      const button3=document.getElementById("download");
+      const label3=document.getElementById("down");
+      button3.addEventListener('click',function(){
+        count=count+1;
+        label3.textContent=`counter:${count}`;
+      })
+</script>
 </body>
 </html>
