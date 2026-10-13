@@ -7,12 +7,12 @@
 
 <link rel="stylesheet" href="style.css" />
 </head>
-<body id="body">
+<body class="dark-theme">
 
 <nav>
   <div class="logo">Kevin Paul</div>
-  
-  <ul id="nav-links"> 
+
+  <ul>
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -20,74 +20,69 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#interests">Interests</a></li>
     <li><a href="#achievements">Achievements</a></li>
-    <button class="theme" id="theme">change theme</button>
+    <li><button id="theme" type="button">Change Theme</button></li>
   </ul>
 </nav>
 
 <section id="hero" class="hero">
-<h1>Hi, I'm Kevin Paul</h1>
-<p>Web Developer & UI Designer</p>
-<div class="hero-photo" id="hero">
-  <img src="./Kevin Paul V - CSE IV-B - 2023-27.jpeg" alt="Kevin Paul"><br>
-</div><br>
-<button id="hide">Hide</button>
-<label id="hidelabel"></label></div>
+  <h1>Hi, I'm Kevin Paul</h1>
+  <p>Web Developer & UI Designer</p>
+  <div class="hero-photo" id="hero-photo">
+    <img src="./Kevin Paul V - CSE IV-B - 2023-27.jpeg" alt="Kevin Paul">
+  </div>
+  <br>
+  <button id="hide" type="button">Hide</button>
 </section>
 
 
-<section id="about" class="about">
+<section id="about">
   <h2>About Me</h2>
   <p>I'm a passionate web developer and UI designer focused on crafting elegant, user-friendly interfaces and robust web applications. My work blends modern technologies with creative design. I thrive on collaboration, innovation, and lifelong learning.</p>
   <br><br>
   <div class="skills-cards">
     <div class="skill-card">
-      <span class="skill-title">HTML</span>
+      HTML
     </div>
     <div class="skill-card">
-      <span class="skill-title">CSS</span>
+      CSS
     </div>
     <div class="skill-card">
-      <span class="skill-title">JavaScript</span>
+      JavaScript
     </div>
     <div class="skill-card">
-      <span class="skill-title">UI Design</span>
+      UI Design
     </div>
     <div class="skill-card">
-      <div class="icon github"><i class="fa-brands fa-github"></i></div>
-      <span class="skill-title">GitHub</span>
+      GitHub
     </div>
   </div>
 </section>
-<divid="academics" class="academics">
-  <table border="1" text-algin=""center">
-     <tr>
-            <th>Course</th>
-            <th>Institution</th>
-            <th>Percentage</th>
-            <th>Year Of Passing</th>
-            
-        </tr>
-        <tr>
-            <td>10th</td>
-            <td>SBOA</td>
-            <td>100</td>
-            <td>2021</td>
-            
-        </tr>
-        <tr>
-            <td>12th</td>
-            <td>SBOA</td>
-            <td>80.5</td>
-            <td>2023</td>
-            
-        </tr>
-        <tr>
-            <td>B.E</td>
-            <td>SAEC</td>
-            <td>8.1</td>
-            <td>2027</td>
-           
-        </tr>
+<div id="academics" class="academics">
+  <table>
+    <tr>
+      <th>Course</th>
+      <th>Institution</th>
+      <th>Percentage</th>
+      <th>Year Of Passing</th>
+    </tr>
+    <tr>
+      <td>10th</td>
+      <td>SBOA</td>
+      <td>100</td>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <td>12th</td>
+      <td>SBOA</td>
+      <td>80.5</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <td>B.E</td>
+      <td>SAEC</td>
+      <td>8.1</td>
+      <td>2027</td>
+    </tr>
   </table>
 </div>
 
@@ -185,39 +180,26 @@
 </section>
 
 <script>
-      const button1=document.getElementById("hide");
-      let boolean=true;
-      const photo=document.getElementById("hero");
-      button1.addEventListener('click',function(){
-       if(boolean){
-        photo.style.display="none";
-        button1.textContent="Show";
-        boolean=false;
-       }
-       else{
-        photo.style.display="block";
-        button1.textContent="Hide";
-        boolean=true;
-       }
-      })
+      const hideBtn = document.getElementById("hide");
+      const photo = document.getElementById("hero-photo");
+      hideBtn.addEventListener("click", () => {
+        const hidden = photo.style.display === "none";
+        photo.style.display = hidden ? "block" : "none";
+        hideBtn.textContent = hidden ? "Hide" : "Show";
+      });
 
-      let isdark=true;
-      const button2=document.getElementById("theme");
-      const body=document.getElementById("body");
-      button2.addEventListener('click',function(){
-        body.className=`${isdaek?"dark-theme":"light-theme"}`;
-      })
+      const themeBtn = document.getElementById("theme");
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+      });
 
-
-
-
-      var count=0;
-      const button3=document.getElementById("download");
-      const label3=document.getElementById("down");
-      button3.addEventListener('click',function(){
-        count=count+1;
-        label3.textContent=`counter:${count}`;
-      })
+      let count = 0;
+      const downloadBtn = document.getElementById("download");
+      const counter = document.getElementById("down");
+      downloadBtn.addEventListener("click", () => {
+        count += 1;
+        counter.textContent = `counter:${count}`;
+      });
 </script>
 </body>
 </html>
