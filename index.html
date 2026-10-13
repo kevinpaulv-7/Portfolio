@@ -189,9 +189,16 @@
       let boolean=true;
       const photo=document.getElementById("hero");
       button1.addEventListener('click',function(){
-        boolean=!boolean;
-        photo.style.display=`${boolean?"block":"none"}`;
-        button1.textContent=`${boolean?"Hide":"Show"} `;
+       if(boolean){
+        photo.style.display="none";
+        button1.textContent="Show";
+        boolean=false;
+       }
+       else{
+        photo.style.display="block";
+        button1.textContent="Hide";
+        boolean=true;
+       }
       })
 
       let isdark=true;
